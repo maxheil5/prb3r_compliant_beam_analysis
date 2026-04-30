@@ -22,6 +22,7 @@ export default function App() {
   const [showFea, setShowFea] = useState(true);
   const [showPrb, setShowPrb] = useState(true);
   const [showCurve, setShowCurve] = useState(true);
+  const [animationSpeed, setAnimationSpeed] = useState(1);
 
   useEffect(() => {
     loadAppData().then(setAppData).catch((loadError) => setError(loadError.message));
@@ -33,12 +34,12 @@ export default function App() {
     }
     const timer = window.setInterval(() => {
       setProgress((current) => {
-        const next = current + 0.015;
+        const next = current + 0.008 * animationSpeed;
         return next > 1 ? 0 : next;
       });
     }, 28);
     return () => window.clearInterval(timer);
-  }, [isPlaying]);
+  }, [isPlaying, animationSpeed]);
 
   const selectedCase = useMemo(() => {
     if (!appData?.cases?.length) {
@@ -128,6 +129,20 @@ export default function App() {
             />
           </div>
 
+          <label className="field-label slider-label" htmlFor="speed-slider">
+            Animation speed <span>{formatNumber(animationSpeed, 1)}x</span>
+          </label>
+          <input
+            id="speed-slider"
+            aria-label="Animation speed"
+            type="range"
+            min="0.25"
+            max="3"
+            step="0.25"
+            value={animationSpeed}
+            onChange={(event) => setAnimationSpeed(Number(event.target.value))}
+          />
+
           <div className="toggle-list">
             <label><input type="checkbox" checked={showCurve} onChange={(event) => setShowCurve(event.target.checked)} /> continuous beam</label>
             <label><input type="checkbox" checked={showPrb} onChange={(event) => setShowPrb(event.target.checked)} /> PRB 3R skeleton</label>
@@ -209,8 +224,8 @@ function GripperSvg({ caseRow, sweepRow, progress, showFea, showPrb, showCurve }
 
       <rect x="0" y="0" width="1000" height="640" rx="22" className="scene-bg" />
       <line x1="110" y1="320" x2="850" y2="320" className="centerline" />
-      <rect x="78" y="145" width="42" height="350" rx="6" className="fixture" />
-      <text x="78" y="128" className="svg-label">fixed base</text>
+      <rect x="78" y="44" width="42" height="552" rx="6" className="fixture" />
+      <text x="78" y="30" className="svg-label">fixed base</text>
       <text x="740" y="112" className="svg-label">tip discrepancy</text>
 
       {showCurve && (
@@ -274,6 +289,6 @@ function lineProps(start, end) {
 function toScreen(point) {
   return {
     x: 110 + Number(point.x) * 690,
-    y: 320 - Number(point.y) * 360,
+    y: 320 - Number(point.y) * 310,
   };
 }

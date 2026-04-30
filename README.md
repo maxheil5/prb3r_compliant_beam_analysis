@@ -184,6 +184,20 @@ prb3r_compliant_beam_analysis/web_app
 
 It presents the beam study as a mirrored compliant gripper application with a large 2D animated visual, a small Three.js 3D preview, curated validation presets, and compact discrepancy/stress metrics. The app uses precomputed analytical and SolidWorks FEA project data. It does not run Python, SciPy, Streamlit, or a backend in the browser.
 
+Deployed app:
+
+```text
+https://maxheil5.github.io/prb3r_compliant_beam_analysis/
+```
+
+Pure Force preset preview:
+
+![Pure Force compliant gripper app demo](web_app/public/media/pure_force_app_demo.gif)
+
+Static app preview:
+
+![PRB 3R compliant gripper app preview](web_app/public/media/app_preview_pure_force.png)
+
 The app satisfies the project GUI checklist:
 
 ```text

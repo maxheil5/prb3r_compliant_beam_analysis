@@ -182,7 +182,7 @@ select {
   grid-template-columns: 82px 1fr;
   gap: 10px;
   align-items: center;
-  margin: 18px 0;
+  margin: 18px 0 10px;
 }
 
 .primary-button {
@@ -197,10 +197,21 @@ input[type="range"] {
   accent-color: #2f756a;
 }
 
+.slider-label {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.slider-label span {
+  color: #2f756a;
+  font-weight: 850;
+}
+
 .toggle-list {
   display: grid;
   gap: 8px;
-  margin: 14px 0 18px;
+  margin: 18px 0;
   color: #3d4c49;
   font-size: 0.92rem;
 }

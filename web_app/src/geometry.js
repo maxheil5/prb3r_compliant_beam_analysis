@@ -1,4 +1,5 @@
 const DEFAULT_GAMMAS = [0.1, 0.35, 0.4, 0.15];
+export const GRIPPER_HALF_SPACING = 0.84;
 
 export function nearestSweepRow(rows, kappa, theta0) {
   if (!rows?.length) {
@@ -54,7 +55,7 @@ export function beamCurve(qx, qy, steps = 52) {
 
 export function mirroredPath(points, side) {
   const sign = side === "upper" ? -1 : 1;
-  const offset = side === "upper" ? 0.34 : -0.34;
+  const offset = side === "upper" ? GRIPPER_HALF_SPACING : -GRIPPER_HALF_SPACING;
   return points.map((point) => ({ x: point.x, y: offset + sign * point.y }));
 }
 
