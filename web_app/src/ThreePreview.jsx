@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-import { beamCurve, mirroredPath } from "./geometry.js";
+import { GRIPPER_HALF_SPACING, beamCurve, mirroredPath } from "./geometry.js";
 
 export default function ThreePreview({ caseRow }) {
   const mountRef = useRef(null);
@@ -15,9 +15,9 @@ export default function ThreePreview({ caseRow }) {
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xf7faf9);
-    const camera = new THREE.PerspectiveCamera(35, 1.6, 0.1, 20);
-    camera.position.set(1.5, -2.4, 1.25);
-    camera.lookAt(0.5, 0, 0);
+    const camera = new THREE.PerspectiveCamera(32, 1.6, 0.1, 20);
+    camera.position.set(1.35, -3.1, 1.65);
+    camera.lookAt(0.46, 0, 0);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -69,7 +69,8 @@ function drawGripper(group, caseRow) {
   const material = new THREE.MeshStandardMaterial({ color: 0x58a99c, roughness: 0.48, metalness: 0.08 });
   const fixtureMaterial = new THREE.MeshStandardMaterial({ color: 0x46515b, roughness: 0.6 });
 
-  const fixture = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.86, 0.18), fixtureMaterial);
+  const fixtureHeight = GRIPPER_HALF_SPACING * 2.0 + 0.42;
+  const fixture = new THREE.Mesh(new THREE.BoxGeometry(0.1, fixtureHeight, 0.2), fixtureMaterial);
   fixture.position.set(0, 0, 0);
   group.add(fixture);
 
