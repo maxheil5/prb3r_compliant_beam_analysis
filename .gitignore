@@ -1,0 +1,12 @@
+.venv/
+.python-packages/
+.pip-tmp/
+pip_tmp/
+pip_support/
+pytest-cache-files-*/
+wheels/
+__pycache__/
+.pytest_cache/
+*.pyc
+web_app/node_modules/
+web_app/dist/

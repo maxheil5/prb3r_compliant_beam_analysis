@@ -1,0 +1,17 @@
+[project]
+name = "prb3r-compliant-beam-analysis"
+version = "0.1.0"
+description = "Analytical PRB 3R model for large-deflection compliant cantilever beams."
+requires-python = ">=3.11"
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "pandas",
+    "pytest",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q -p no:cacheprovider"

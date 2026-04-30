@@ -1,0 +1,50 @@
+[
+  {
+    "kappa": 0.0,
+    "max_tip_error_percent": 1.913960969,
+    "expected_reference_error_percent": 1.9,
+    "difference_percent_points": 0.013960969,
+    "passes_reference_tolerance": true,
+    "notes": "Agreement within expected tolerance"
+  },
+  {
+    "kappa": 0.1,
+    "max_tip_error_percent": 1.9011562112,
+    "expected_reference_error_percent": 1.6,
+    "difference_percent_points": 0.3011562112,
+    "passes_reference_tolerance": true,
+    "notes": "Agreement within expected tolerance"
+  },
+  {
+    "kappa": 1.0,
+    "max_tip_error_percent": 5.0160302807,
+    "expected_reference_error_percent": 0.9,
+    "difference_percent_points": 4.1160302807,
+    "passes_reference_tolerance": false,
+    "notes": "Elevated error near high-slope endpoint; diagnostics indicate sign, solver branch, IK reconstruction, and stiffness fitting are not the primary cause."
+  },
+  {
+    "kappa": 2.0,
+    "max_tip_error_percent": 1.1200404902,
+    "expected_reference_error_percent": 1.1,
+    "difference_percent_points": 0.0200404902,
+    "passes_reference_tolerance": true,
+    "notes": "Agreement within expected tolerance"
+  },
+  {
+    "kappa": 5.0,
+    "max_tip_error_percent": 1.2235333942,
+    "expected_reference_error_percent": 1.2,
+    "difference_percent_points": 0.0235333942,
+    "passes_reference_tolerance": true,
+    "notes": "Agreement within expected tolerance"
+  },
+  {
+    "kappa": 50.0,
+    "max_tip_error_percent": 2.1550778931,
+    "expected_reference_error_percent": 2.2,
+    "difference_percent_points": -0.0449221069,
+    "passes_reference_tolerance": true,
+    "notes": "Agreement within expected tolerance"
+  }
+]

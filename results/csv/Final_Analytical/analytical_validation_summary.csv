@@ -1,0 +1,7 @@
+kappa,max_tip_error_percent,expected_reference_error_percent,difference_percent_points,passes_reference_tolerance,notes
+0.0,1.9139609690292565,1.9,0.013960969029256587,True,Agreement within expected tolerance
+0.1,1.9011562111871498,1.6,0.30115621118714975,True,Agreement within expected tolerance
+1.0,5.0160302807280175,0.9,4.116030280728017,False,"Elevated error near high-slope endpoint; diagnostics indicate sign, solver branch, IK reconstruction, and stiffness fitting are not the primary cause."
+2.0,1.1200404902345475,1.1,0.02004049023454746,True,Agreement within expected tolerance
+5.0,1.223533394207274,1.2,0.02353339420727396,True,Agreement within expected tolerance
+50.0,2.155077893124412,2.2,-0.044922106875588064,True,Agreement within expected tolerance

@@ -1,0 +1,2 @@
+number_of_cases,max_tip_error_percent,mean_tip_error_percent,max_stress_MPa,min_stress_safety_factor,case_id_with_max_error,case_id_with_max_stress,case_id_with_min_safety_factor
+10,59.85474056413577,20.7048567212424,23.1,1.2987012987012987,10,6,6
